@@ -11,13 +11,14 @@ from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
 import re
+import streamlit as st
 import toml
 import os
 config=toml.load('config.toml')
 os.environ['LANGCHAIN_TRACING_V2']='true'
-os.environ['LANGCHAIN_API_KEY']=config['langchain']['api_key']
+os.environ['LANGCHAIN_API_KEY']=st.secrets['langchain']['api_key']
 def getLLM():
-    model =  ChatOpenAI(api_key=config['openai']['api_key'],temperature=.5) #OllamaLLM(model="gemma2",streaming=True,temperature=0.95) if type!='Gemma' else OllamaLLM(model="llama3.1",streaming=True,temperature=0.4) 
+    model =  ChatOpenAI(api_key=st.secrets['openai']['api_key'],temperature=.5) #OllamaLLM(model="gemma2",streaming=True,temperature=0.95) if type!='Gemma' else OllamaLLM(model="llama3.1",streaming=True,temperature=0.4) 
     return model
 store = {}
 
