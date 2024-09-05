@@ -11,8 +11,7 @@ from streamlit_pdf_viewer import pdf_viewer
 import time
 from threading import Thread
 import toml
-import os
-config=toml.load('config.toml')
+
 os.environ['LANGCHAIN_TRACING_V2']='true'
 os.environ['LANGCHAIN_API_KEY']=st.secrets['langchain']['api_key']
 

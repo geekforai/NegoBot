@@ -12,9 +12,9 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
 import re
 import streamlit as st
-import toml
+
 import os
-config=toml.load('config.toml')
+
 os.environ['LANGCHAIN_TRACING_V2']='true'
 os.environ['LANGCHAIN_API_KEY']=st.secrets['langchain']['api_key']
 def getLLM():
