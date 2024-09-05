@@ -15,7 +15,7 @@ import streamlit as st
 
 import os
 
-os.environ['LANGCHAIN_TRACING_V2']='true'
+os.environ['LANGCHAIN_TRACING_V2']=st.secrets['langchain']['LANGCHAIN_TRACING_V2']
 os.environ['LANGCHAIN_API_KEY']=st.secrets['langchain']['api_key']
 def getLLM():
     model =  ChatOpenAI(api_key=st.secrets['openai']['api_key'],temperature=.5) #OllamaLLM(model="gemma2",streaming=True,temperature=0.95) if type!='Gemma' else OllamaLLM(model="llama3.1",streaming=True,temperature=0.4) 

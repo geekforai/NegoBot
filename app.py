@@ -11,8 +11,8 @@ from streamlit_pdf_viewer import pdf_viewer
 import time
 from threading import Thread
 import toml
-
-os.environ['LANGCHAIN_TRACING_V2']='true'
+import os
+os.environ['LANGCHAIN_TRACING_V2']=st.secrets['langchain']['LANGCHAIN_TRACING_V2']
 os.environ['LANGCHAIN_API_KEY']=st.secrets['langchain']['api_key']
 
 def sayhi():
