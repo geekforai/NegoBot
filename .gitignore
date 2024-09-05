@@ -1,0 +1,5 @@
+\.venv
+\faiss.index
+.env
+\__pycache__
+config.toml
