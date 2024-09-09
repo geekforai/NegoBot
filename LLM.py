@@ -14,7 +14,6 @@ import re
 import streamlit as st
 
 import os
-
 os.environ['LANGCHAIN_TRACING_V2']=st.secrets['langchain']['LANGCHAIN_TRACING_V2']
 os.environ['LANGCHAIN_API_KEY']=st.secrets['langchain']['api_key']
 def getLLM():
@@ -34,8 +33,6 @@ def getChain():
     # "Your goal is to secure the best deal for the buyer while adhering strictly to their requirements. "
     # "Respond only from the buyer's perspective and make clear counteroffers based on their budget. "
     # "If you cannot reach an agreement or need more information, ask for clarification.{context}."
-
-         
          """
             Role: Buyer’s Representative
 
